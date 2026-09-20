@@ -61,8 +61,8 @@ class ConfigFlow(config_entries.ConfigFlow, domain="syncleo_kettle"):
             description = f"{device['devtype']}: {device['mac']}"
             if device['vendor'] != 'Unknown':
                 description += f" ({device['vendor']}"
-                if int(device['basetype']) in POLARIS_DEVICE:
-                    description += f" {POLARIS_DEVICE[int(device['basetype'])]['model']}"
+                if int(device['devtype']) in POLARIS_DEVICE:
+                    description += f" {POLARIS_DEVICE[int(device['devtype'])]['model']}"
                 else:
                     description += f" Unknown"
                 description += ")"
